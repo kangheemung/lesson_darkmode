@@ -1,6 +1,9 @@
 import React from 'react'
 
-function Header({darkMode,toggleDarkMode}) {
+function Header({darkMode,setDarkMode}) {
+  //handler darkモード
+const toggleDarkMode=()=>setDarkMode(!darkMode);
+
   return (
     <header style={{display:"flex",justifyContent : "space-between"}}>
       <h1>Header</h1>
