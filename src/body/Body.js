@@ -2,11 +2,7 @@ import {useState} from 'react'
 import Post from './Post/Post'
 import PostList from './Post/PostList'
 function Body({darkMode}) {
-  //スタイルを定義する
-const Styles={
-  backgroundColor: darkMode? '#333':'#FFF',
-  color: darkMode? '#FFF':'#333'
-}
+
 
 const [post,setPost]=useState("")
 const [posts, setPosts] = useState([]);
@@ -16,7 +12,7 @@ const addPost = (newPost) => {
 };
 
   return (
-    <div style={Styles} >
+    <div >
       <Post post={post}
             setPost={setPost}
             addPost={addPost}/>

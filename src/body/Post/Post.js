@@ -1,4 +1,4 @@
-import React from 'react';
+
 function Post({post,setPost,addPost}) {
 
     const handleSubmit =(e)=>{
