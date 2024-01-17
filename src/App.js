@@ -18,6 +18,7 @@ function App() {
 
   return (
     <>
+    <div className={style}>
     <Header
     darkMode={darkMode}
       setDarkMode={setDarkMode}/>
@@ -27,7 +28,8 @@ function App() {
     <ToggleVisibility />
 
     <Body
-    darkMode={darkMode}/>
+    darkMode={darkMode}setDarkMode={setDarkMode}/>
+    </div>
     </>
   );
 }
