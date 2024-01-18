@@ -25,14 +25,14 @@
 }
 
 body {
-  background-color: var(--foreground-color-light);
-  color: var(--text-color-light);
+  background-color: let(--foreground-color-light);
+  color: let(--text-color-light);
 }
 
 .App.dark-mode, .App.dark-mode * {
   /* This will apply dark mode to everything within App */
-  background-color: var(--background-color-dark);
-  color: var(--text-color-dark);
+  background-color: let(--background-color-dark);
+  color: let(--text-color-dark);
 }
 
 .App-link {
