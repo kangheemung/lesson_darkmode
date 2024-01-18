@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState,createContext} from 'react'
 import './App.css';
 import Body from './body/Body';
 import Header from './header/Header';
@@ -6,30 +6,29 @@ import Count from './body/Count';
 import Problem from './body/Problem';
 import ToggleVisibility from './body/ToggleVisibility';
 import CharacterCounter from './body/CharacterCounter';
+export const ThemeContext = createContext(null);
 function App() {
-  const [darkMode,setDarkMode] = useState(false);
+  const [darkMode,setDarkMode] = useState("light");
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((curr)=>(curr === "light" ? "dark" : "light"));
   };
-
-  // クラス名を生成
-  const style = darkMode ? 'dark-mode' : 'light-mode';
 
   return (
     <>
-    <div className={style}>
+    <ThemeContext.Provider value={{darkMode,setDarkMode }}>
+    <div className={`App ${darkMode === 'dark' ? 'dark-mode' : ''}`} id={darkMode}>
     <Header
-    darkMode={darkMode}
+      darkMode={darkMode}
       setDarkMode={setDarkMode}/>
     <CharacterCounter />
     <Problem/>
     <Count />
     <ToggleVisibility />
-
     <Body
     darkMode={darkMode}setDarkMode={setDarkMode}/>
     </div>
+    </ThemeContext.Provider>
     </>
   );
 }

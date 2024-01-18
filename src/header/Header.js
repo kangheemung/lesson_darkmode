@@ -2,7 +2,7 @@
 
 function Header({darkMode,setDarkMode}) {
   //handler darkモード
-const toggleDarkMode=()=>setDarkMode(!darkMode);
+  const toggleDarkMode = () => setDarkMode(darkMode === 'light' ? 'dark' : 'light');
 
 
   return (
